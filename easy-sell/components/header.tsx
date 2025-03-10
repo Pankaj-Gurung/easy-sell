@@ -1,12 +1,21 @@
-import Link from "next/link"
+import Link from 'next/link';
 
-export default function Header() {
+export default function Header({ font }: { font?: string }) {
   return (
-    <div>
-        <Link href='/'>Sajilo Sell</Link>
-        <Link href='/product/upload'>Upload </Link>
-
-        
-    </div>
-  )
+    <header className="py-2 bg-black ">
+      <div className="max-w-[100rem] px-12 mx-auto flex justify-between">
+        <Link href="/">
+          <h1 className={`uppercase text-yellow-500 text-center py-2 ${font}`}>
+            Easy Sell
+          </h1>
+        </Link>
+        <Link
+          href="/products/upload"
+          className="uppercase text-white text-xl py-2 hover:text-yellow-700"
+        >
+          Upload {'>'}
+        </Link>
+      </div>
+    </header>
+  );
 }
